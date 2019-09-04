@@ -288,7 +288,7 @@ def write_lammps_inputs(supercell, atom_sites, species, species_idx, dir_path,
     if fix_xy_idx is not None:
 
         nfxy = len(fix_xy_idx)
-        if nfxy == atom_sites.shape[1]:
+        if nfxy == atom_sites.shape[1] or fix_xy_idx.upper() == 'ALL':
             fxy_grp = 'all'
         else:
             fxy_grp = 'fix_xy'
